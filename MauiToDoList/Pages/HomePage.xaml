@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiToDoList.Pages.HomePage"
+             xmlns:viewmodels="clr-namespace:MauiToDoList.ViewModels"
+             x:DataType="viewmodels:PersonViewModel"
+             Title="Home">
+    <ScrollView Orientation="Vertical">
+        <VerticalStackLayout>
+            <Entry Placeholder="Nhập tên 1"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               PlaceholderColor="#FA7070"
+               FontSize="Medium"
+               Text="{Binding Name}"/>
+
+            <Label Text="{Binding Name}"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+
+            <Entry Placeholder="Nhập tên 2"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               PlaceholderColor="#FA7070"
+               FontSize="Medium"
+               Text="{Binding Name2}"/>
+
+            <Label Text="{Binding Name2}"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+
+            <Button Text="Submit"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Command="{Binding GetPersonCommand}"/>
+            <Image Source="bunny_animation.gif"
+               IsAnimationPlaying="True"/>
+            <Label Text="{Binding DisplayName}"
+               HorizontalOptions="Center"
+               TextColor="#FA7070"
+               FontSize="Medium"
+               LineBreakMode="WordWrap"
+               MaxLines="3"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

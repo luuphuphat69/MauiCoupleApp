@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiToDoList.Pages.RequestPage"
+             Title="Alert">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Stroke="Black" 
+                StrokeThickness="2" 
+                StrokeShape="RoundRectangle 20" 
+                Padding="10" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"
+                Grid.Row="0"
+                Grid.ColumnSpan="2">
+            <Editor x:Name="editor"
+                Placeholder="Nhập yêu cầu"
+                FontSize="Medium"    
+                WidthRequest="350"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                AutoSize="TextChanges"
+                PlaceholderColor="#FA7070"
+                TextChanged="OnEditorTextChanged"
+                Completed="OnEditorCompleted"/>
+        </Border>
+        
+        <Entry x:Name="EntryEmail"
+               Placeholder="Nhập email: luuphuphat69@gmail.com"
+               VerticalOptions="Center"
+               FontSize="Medium"
+               Keyboard="Email"
+               PlaceholderColor="#FA7070"
+               Grid.Row="1"
+               Grid.ColumnSpan="2"/>
+        
+        <Entry x:Name="EntryPhoneNumber"
+               Placeholder="Nhập số điện thoại: 035555xxxx"
+               VerticalOptions="Center"
+               FontSize="Medium"
+               PlaceholderColor="#FA7070"
+               Keyboard="Telephone"
+               Grid.Row="2"
+               Grid.ColumnSpan="2"/>
+        
+        <Button Text="Gửi Mail"
+                Margin="5"
+                LineBreakMode="NoWrap"
+                HorizontalOptions="Start"
+                Grid.Row="3"
+                Grid.Column="0"
+                Clicked="Btn_clicked_Email"/>
+
+        <Button Text="Gửi Sms."
+                Margin="5"
+                LineBreakMode="NoWrap"
+                HorizontalOptions="End"
+                Grid.Row="3"
+                Grid.Column="1"
+                Clicked="Btn_clicked_Phonenumber"/>
+    </Grid>
+</ContentPage>

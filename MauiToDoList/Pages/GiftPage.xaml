@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiToDoList.Pages.GiftPage"
+             xmlns:viewmodel="clr-namespace:MauiToDoList.ViewModels"
+             x:DataType="viewmodel:DateViewModel"
+             Title="Gifts">
+    <VerticalStackLayout>
+        <Label Text="Ngày bắt đầu"
+               HorizontalOptions="Center"
+               FontSize="Large"
+               TextColor="#A1C298"/>
+        <Entry TextColor="#FA7070"
+               HorizontalOptions="Center"
+               FontSize="Medium"
+               Text="{Binding StartDate}"/>
+
+        <Label Text="Ngày hiện tại"
+               HorizontalOptions="Center"
+               FontSize="Large"
+               TextColor="#A1C298"/>
+        <Entry TextColor="#FA7070"
+               HorizontalOptions="Center"
+               FontSize="Medium"
+               Text="{Binding EndDate}"/>
+        
+        <Button Text="Tính ngày"
+                Command="{Binding CaculateDateCommand}"
+                HorizontalOptions="Center"/>
+        <Label Text="(Định dạng ngày là mm/dd/yyyy)"
+               FontSize="Small"
+               Padding="10"
+               TextColor="Red"
+               HorizontalOptions="Center"/>
+        <Label Text="{Binding DisplayDate}"
+               HorizontalOptions="Center"
+               Margin="50"
+               FontSize="Medium"
+               TextColor="#FA7070"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiToDoList.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:MauiToDoList.Pages"
+    Shell.FlyoutBehavior="Disabled">
+    <TabBar>
+        <Tab Title="Home" Icon="home.png">
+            <ShellContent
+                Title="Home"
+                ContentTemplate="{DataTemplate pages:HomePage}"
+                Route="HomePage"/>
+        </Tab>
+        <Tab Title="Alert" Icon="fire_solid.png">
+            <ShellContent
+                Title="Alert"
+                ContentTemplate="{DataTemplate pages:RequestPage}"
+                Route="RequestPage"/>
+        </Tab>
+        <Tab Title="Gift" Icon="heart.png">
+            <ShellContent
+                Title="Send Gift"
+                ContentTemplate="{DataTemplate pages:GiftPage}"
+                Route="GiftPage"/>
+        </Tab>
+    </TabBar>
+</Shell>
